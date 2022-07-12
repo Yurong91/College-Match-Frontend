@@ -22,7 +22,7 @@ const SchoolDetails = () => {
             <p>City: {schoolDetails.city}</p>
             <button 
                 className='btn btn-primary' 
-                onClick={() => navigate(`/movies/${schoolDetails._id}/edit`, { state: schoolDetails })}
+                onClick={() => navigate(`/schools/${schoolDetails._id}/edit`, { state: schoolDetails })}
             >
                 Edit
             </button>
