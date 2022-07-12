@@ -26,20 +26,20 @@ const App = () => {
   return (
     <div className="App">
        <Nav user={user} setUser={setUser} logOut={usersService.logOut}/>
-       <Route path='/login' element={<Login setUser={setUser} />} />
-       <Route path='/signup' element={<SignUp setUser={setUser} />} />
-        {
-          user &&
-          <>
-            <Route path='/schools' element={<Schools />} />
-            <Route path='/schools/create' element={<CreateSchool />} />
-            <Route path='/schools/:id' element={<SchoolDetails />} />
-            <Route path='/schools/:id/edit' element={<UpdateSchoolForm />} />
+       
+       <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<Login setUser={setUser} />} />
+          <Route path='/signup' element={<SignUp setUser={setUser} />} />
+           {
+             user &&
+             <>
+               <Route path='/schools' element={<Schools />} />
+               <Route path='/schools/create' element={<CreateSchool />} />
+               <Route path='/schools/:id' element={<SchoolDetails />} />
+               <Route path='/schools/:id/edit' element={<UpdateSchoolForm />} />
           </>
         }
-
-       <Routes>
-           <Route path='/' element={<Home />}/>
        </Routes>
 
        <Footer />
